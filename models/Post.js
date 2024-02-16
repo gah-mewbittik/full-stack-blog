@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Post extends Model {}
 
-Gallery.init(
+Post.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,11 +15,21 @@ Gallery.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     post_date: {
       type: DataTypes.DATE,
       allowNull: false,
     },
-   
+    blog_id: {            // TODO: Review this ...
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'blog',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,
