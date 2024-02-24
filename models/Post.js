@@ -23,10 +23,10 @@ Post.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
-    blog_id: {            // TODO: Review this ...
+    user_id: {            // TODO: Review this ...
       type: DataTypes.INTEGER,
       references: {
-        model: 'blog',
+        model: 'user',
         key: 'id',
       },
     },

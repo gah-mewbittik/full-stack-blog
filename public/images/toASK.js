@@ -6,4 +6,6 @@
 
 //TODO: DO I need a model for blog?
 
-//TODO: 
+//TODO: AM I supposed to add user_id to seed postData file.
+
+//TODO: Do I need a userData seed file?
