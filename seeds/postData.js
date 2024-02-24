@@ -5,7 +5,7 @@ const postData = [
     title: 'Sequelize to Realize',
     description: 'Wow, sequelize is so useful!',
     post_date: '8/8/2023',
-    featured: true,           //TODO: remember to change these if a Blog model is created
+    featured: true,           
   },
   {
     title: 'Front-end mastery',
