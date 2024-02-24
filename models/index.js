@@ -2,8 +2,8 @@ const User = require('./User');
 const Post = require('./Post');
 
 
-// TODO: add associations HERE
-User.hasMany(Project,{
+// TODO: fix associations HERE
+User.hasMany(Post,{
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
 });

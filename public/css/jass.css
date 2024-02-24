@@ -12,6 +12,7 @@ a{
 }
 a:hover{
     color: orangered;
+    text-decoration: underline;
 }
 
 .tech-logo{
@@ -100,4 +101,9 @@ form {
   .btn.btn-primary:hover {
     background-color: orangered;
 
+  }
+
+  .sign-up-link{
+    margin: 50px;
+    color: #2d3e50;
   }
