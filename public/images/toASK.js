@@ -12,6 +12,10 @@
 
 //TODO: Need explanation on routes and html links
 
+//TODO: How to dynamically generate Post cards?
+
+//TODO: What's missing?
+
 
 
 // -------TODO: THINGS to do --------- //
