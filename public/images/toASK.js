@@ -10,6 +10,8 @@
 
 //TODO: Do I need a userData seed file?
 
+//TODO: Need explanation on routes and html links
+
 
 
 // -------TODO: THINGS to do --------- //

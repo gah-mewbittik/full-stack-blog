@@ -107,3 +107,35 @@ form {
     margin: 50px;
     color: #2d3e50;
   }
+
+  /** Post Card container **/
+
+.dash-sub-container{
+  width: 70%;
+  border-color: rgb(56, 5, 103);
+  border-width: 5px;
+  border-style: solid;
+  
+}
+.title-Date{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(56, 5, 103);
+ }
+.postTitle{
+  color:aquamarine;
+  padding: 10px;
+  margin-top: 0;
+  
+}
+.postAuthor{
+  color:aquamarine;
+ margin-left: 200px;
+ margin-top: 2px;
+}
+.postDate{
+  color:aquamarine;
+  margin-right: 10px;
+  margin-top: 2px;
+}
