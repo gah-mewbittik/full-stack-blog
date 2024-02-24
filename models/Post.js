@@ -30,6 +30,10 @@ Post.init(
         key: 'id',
       },
     },
+    featured:{
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
   },
   {
     sequelize,

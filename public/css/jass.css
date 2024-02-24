@@ -35,7 +35,7 @@ form {
   
   form .form-group {
     display: block;
-    width: 100%;
+    width: 50%;
     margin: 0.625rem 0;
     margin-left: 50px;
     
@@ -71,6 +71,7 @@ form {
     font-size: 1.2rem;
     border: 1px solid #484848;
     border-radius: 0.3rem;
+    
   }
   
   form .form-input.form-input-squared {
@@ -90,8 +91,13 @@ form {
   .btn.btn-primary {
     background-color: #2d3e50;
     color: #d9e9e8;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 20px;
   }
   
   .btn.btn-primary:hover {
-    background-color: #57779a;
+    background-color: orangered;
+
   }
