@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const User = require('./User');
 
 class Post extends Model {}
 
@@ -23,10 +24,10 @@ Post.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
-    user_id: {            // TODO: Review this ...
+    user_id: {            // TODO: Review this ... import and remove ''
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: User,
         key: 'id',
       },
     },

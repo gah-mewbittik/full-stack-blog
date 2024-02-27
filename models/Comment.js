@@ -1,5 +1,7 @@
 const { Model, Datatypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const User = require('./User');
+const Post = require('./Post');
 
 class Comment extends Model{}
 
@@ -21,14 +23,14 @@ Comment.init(
         user_id: {
             type: Datatypes.INTEGER,
             references: {
-                model: 'user',
+                model: User,
                 key: 'id',
             },
         },
         post_id: {
             type: Datatypes.INTEGER,
             references: {
-                model: 'post',
+                model: Post,
                 key: 'id',
             },
         },
