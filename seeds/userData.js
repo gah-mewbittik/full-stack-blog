@@ -29,6 +29,13 @@ const userData = [
 
 ];
 
-const seedUsers = () => User.bulkCreate(userData);
+const seedUsers = async () => {
+  //hash password before creating user
+  const usersWithHashedPass = userData.map(user => ({
+    ...user,
+    password: bcrypt.hashSync(user.password, 10)
+  }));
+  await User.bulkCreate(usersWithHashedPass);
+}
 
 module.exports = seedUsers;

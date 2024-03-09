@@ -21,6 +21,23 @@ router.post('/', async (req, res) => {
   }
 });
 
+//Get All users
+router.get('/', async (req, res) => {
+  try{
+    const userData = await User.findAll({});
+
+    const users = userData.map((user) => user.get({plain: true}));
+      res.json(users);
+    
+
+  }catch(err){
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
+////////////////////////////////
 // Login
 router.post('/login', async (req, res) => {
   try {
@@ -67,6 +84,21 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+//Sign up
+router.post('/signup', async (req, res) => {
+  try{
+    const newUser = await User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
+    });
+    res.status(201).json({message: 'Successfully Signed Up'});
+  }catch(err){
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
