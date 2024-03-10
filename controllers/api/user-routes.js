@@ -110,7 +110,7 @@ router.post('/logout', (req, res) => {
 router.post('/signup', async (req, res) => {
   try{
     const newUser = await User.create({
-      username: req.body.username,
+      name: req.body.name,
       email: req.body.email,
       password: req.body.password,
     });
