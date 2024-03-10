@@ -16,8 +16,8 @@
         <nav>
             <a href="/">Home</a>
             <a href="/dashboard">Dashboard</a>
-            {{#if logged_in}}
-            <button class="btn" id="logout">Logout</button>
+            {{#if loggedIn}}
+            <button class="btn btn-primary" id="logout" type="submit">Logout</button>
             {{else}}
             <a href="/login">Login</a>
         
@@ -34,7 +34,7 @@
     <footer></footer>
 
     <!-- If user is logged in - include logout script -->
-    {{#if logged_in}}
+    {{#if loggedIn}}
     <script src="/js/logout.js"></script>
     {{/if}}
 
