@@ -10,18 +10,12 @@ router.get('/', (req, res) => {
 //Get Dashboard
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-      order: [['name', 'ASC']],
+    console.log(' user is: ', req.session.user_id);
+    res.render('dashboard', {
+      loggedIn: req.session.loggedIn,
+      userId: req.session.user_id
     });
 
-    const users = userData.map((project) => project.get({ plain: true }));
-
-    res.render('homepage', {
-      users,
-      // Pass the logged in flag to the template
-      logged_in: req.session.logged_in,
-    });
   } catch (err) {
     res.status(500).json(err);
   }

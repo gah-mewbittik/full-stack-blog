@@ -5,7 +5,7 @@ const { User } = require('../../models');
 router.post('/', async (req, res) => {
   try {
     const dbUserData = await User.create({
-      username: req.body.username,
+      name: req.body.name,
       email: req.body.email,
       password: req.body.password,
     });
@@ -36,6 +36,24 @@ router.get('/', async (req, res) => {
   }
 });
 
+//Get a single User TODO: why Is this crashing when uncommented out
+router.get('/:id', async (req, res) => {
+  try{
+    const user = await User.findOne({
+      where: {id: req.params.id },
+    });
+
+    if(!user){
+      return res.status(404).json({message: 'User not found'});
+    }
+
+    res.json(user);
+
+  }catch(err){
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 ////////////////////////////////
 // Login
@@ -64,6 +82,7 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
+      req.session.user_id = dbUserData.id;
       req.session.loggedIn = true;
 
       res
