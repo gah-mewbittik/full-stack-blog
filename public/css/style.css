@@ -1,0 +1,152 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-size: 16px;
+}
+.nav-link{
+    text-decoration: none;
+    margin: 50px;
+    font-size: 25px;
+    color:aquamarine;
+}
+.nav-link:hover{
+    color: orangered;
+    text-decoration: underline;
+}
+
+.tech-logo{
+    color: aquamarine; 
+    margin: 50px;
+    padding-bottom: 50px;
+   
+}
+h2{
+    margin-left: 50px;
+}
+
+header{
+    background-color: rgb(56, 5, 103);
+    width: 100%;
+}
+
+form {
+    width: 100%;
+  }
+
+  .form-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  form .form-group {
+    display: block;
+    width: 50%;
+    margin: 0.625rem 0;
+    margin-left: 50px;
+    
+  }
+  
+  form .form-input,
+  form .form-textarea {
+    display: block;
+  }
+  
+  form label,
+  form .form-label {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0.625rem 0 0.25rem 0.3rem;
+  }
+  
+  form .form-input {
+    width: 100%;
+    padding: 0.75rem;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    margin: 0.625rem 0;
+    font-size: 1.2rem;
+    border: 1px solid #484848;
+    border-radius: 0.3rem;
+    
+  }
+  
+  form .form-input.form-input-squared {
+    border-radius: 0;
+  }
+  
+
+/** TODO: Fix the buttons**/
+  .btn.btn-primary {
+    background-color: #2d3e50;
+    color: #d9e9e8;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 20px;
+  }
+  
+  .btn.btn-primary:hover {
+    background-color: orangered;
+
+  }
+  #logout{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+  }
+
+  .signUp-container{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+  }
+  .sign-up-link{
+    font-size: 30px;
+    margin: 50px;
+    color: #2d3e50;
+  }
+  .sign-up-link:hover{
+    color:orangered;
+  }
+
+  /** Post Card container **/
+  .createPost{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    width: fit-content;
+  
+  }
+
+.dash-sub-container{
+  width: 70%;
+  border-color: rgb(56, 5, 103);
+  border-width: 5px;
+  border-style: solid;
+  
+}
+.title-Date{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(56, 5, 103);
+ }
+.postTitle{
+  color:aquamarine;
+  padding: 10px;
+  margin-top: 0;
+  
+}
+.postAuthor{
+  color:aquamarine;
+ margin-left: 200px;
+ margin-top: 2px;
+}
+.postDate{
+  color:aquamarine;
+  margin-right: 10px;
+  margin-top: 2px;
+}
