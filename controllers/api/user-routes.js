@@ -109,6 +109,18 @@ router.post('/logout', (req, res) => {
 //Sign up
 router.post('/signup', async (req, res) => {
   try{
+    // Check if the email already exists in the database
+    const existingUser = await User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    });
+
+    if (existingUser) {
+      // If the email already exists, return a 400 status with an error message
+      return res.status(400).json({ message: 'Email address is already in use' });
+    }
+
     const newUser = await User.create({
       name: req.body.name,
       email: req.body.email,

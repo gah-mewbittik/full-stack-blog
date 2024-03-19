@@ -4,13 +4,13 @@ body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     font-size: 16px;
 }
-a{
+.nav-link{
     text-decoration: none;
     margin: 50px;
     font-size: 25px;
     color:aquamarine;
 }
-a:hover{
+.nav-link:hover{
     color: orangered;
     text-decoration: underline;
 }
@@ -33,6 +33,12 @@ header{
 form {
     width: 100%;
   }
+
+  .form-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
   
   form .form-group {
     display: block;
@@ -45,15 +51,6 @@ form {
   form .form-input,
   form .form-textarea {
     display: block;
-  }
-  
-  form select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-    background-repeat: no-repeat;
-    background-position-x: 98%;
-    background-position-y: 50%;
   }
   
   form label,
@@ -79,15 +76,7 @@ form {
     border-radius: 0;
   }
   
-  form [type='checkbox'],
-  form [type='radio'] {
-    display: inline-block;
-  }
-  
-  label form [type='checkbox'], label
-  form [type='radio'] {
-    display: inline-block;
-  }
+
 /** TODO: Fix the buttons**/
   .btn.btn-primary {
     background-color: #2d3e50;
@@ -103,9 +92,18 @@ form {
 
   }
 
+  .signUp-container{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+  }
   .sign-up-link{
+    font-size: 30px;
     margin: 50px;
     color: #2d3e50;
+  }
+  .sign-up-link:hover{
+    color:orangered;
   }
 
   /** Post Card container **/

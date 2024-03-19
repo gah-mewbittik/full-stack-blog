@@ -14,32 +14,32 @@
        
         <!-- Display the logout button when the user in Logged in -->
         
-        <nav>
-            <a href="/">Home</a>
-            <a href="/dashboard">Dashboard</a>
-            {{#if loggedIn}}
-            <button class="btn btn-primary" id="logout" type="submit">Logout</button>
-            {{else}}
-            <a href="/login">Login</a>
-        
-            {{/if}}
+        <nav class="col-12">
+            <ul class="nav">
+                <li class="nav-item"></li><a class="nav-link" href="/">Home</a></li>
+                 <li class="nav-item"></li><a class="nav-link" href="/dashboard">Dashboard</a>
+                {{#if loggedIn}}
+                <button class="btn btn-primary" id="logout" type="submit">Logout</button>
+                {{else}}
+                 <li class="nav-item"></li><a class="nav-link" href="/login">Login</a>
+            
+                {{/if}}
+            </ul>
         </nav>
-
-         <h1 class="tech-logo">The Tech Blog</h1>
-        
+       
     </header>
      <div id="alert-container"></div>
     <main class="container container-fluid mt-5">
         {{{body}}}
     </main>
     <footer></footer>
-    <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+     
     <!-- If user is logged in - include logout script -->
     {{#if loggedIn}}
     <script src="/js/logout.js"></script>
     {{/if}}
-
+     <script src="/js/signUp.js"></script>
 </body>
 
 </html>

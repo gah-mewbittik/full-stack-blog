@@ -4,7 +4,9 @@ const withAuth = require('../utils/auth');
 
 // Get homepage
 router.get('/', (req, res) => {
-  res.render('homepage');
+  res.render('homepage', {
+    loggedIn: req.session.loggedIn,
+    userId: req.session.user_id});
 });
 
 //Get Dashboard
