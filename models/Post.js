@@ -33,7 +33,7 @@ Post.init(
     },
     featured:{
       type: DataTypes.BOOLEAN,
-      allowNull: false,
+      allowNull: true,
     },
   },
   {

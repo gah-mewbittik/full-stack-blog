@@ -16,10 +16,9 @@ body{
 }
 
 .tech-logo{
-    color: aquamarine; 
-    margin: 50px;
-    padding-bottom: 50px;
-   
+    color: rgb(55, 218, 164); 
+    margin: 20px;
+    padding-bottom: 20px;
 }
 h2{
     margin-left: 50px;
@@ -112,6 +111,7 @@ form {
   }
 
   /** Post Card container **/
+  /** createPost button **/
   .createPost{
     display: flex;
     justify-content: center;
@@ -120,6 +120,45 @@ form {
     width: fit-content;
   
   }
+  /** New Post container**/
+  .newPost-container{
+    /** display:inline-block; **/
+    margin-bottom:150px;
+    border-style: solid;
+    border-color: aquamarine;
+    border-radius: 6px;
+   
+  }
+
+  .newPostHeader{
+   
+    margin-right: 20px;
+    color: rgb(56, 5, 103);
+    background-color: aquamarine;
+    width: 100%;
+  }
+
+  #form-createPost{
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    margin: 30px auto;
+    
+    /** width: fit-content; **/
+  }
+
+  #postTitle{
+    margin-left:20px;
+    border-radius: 4px;
+    margin-right: 20px;
+    box-shadow: 3px 3px grey;
+  }
+  #postDescription{
+    border-radius: 4px;
+    margin-right:20px;
+    box-shadow: 3px 3px grey;
+  }
+
 
 .dash-sub-container{
   width: 70%;

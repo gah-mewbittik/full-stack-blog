@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function(){
-  const signupFormHandler = async (event) => {
+
+  let signupFormHandler = async (event) => {
       event.preventDefault();
     
       const name = document.querySelector('#name-signup').value.trim();
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function(){
         });
 
         if (response.ok) {
-          document.location.replace('/dashboard');
+          
 
           container.innerHTML = 
           `<div class="alert alert-success alert-dismissible fade show" role="alert" data-bs-autohide="false">
@@ -33,7 +33,10 @@ document.addEventListener('DOMContentLoaded', function(){
               if(alert){
                   alert.style.display = 'none';
               }
+              document.location.replace('/login');
           });
+
+         
 
         } else {
           console.log('Response Error: ', response.statusText);
@@ -45,4 +48,4 @@ document.addEventListener('DOMContentLoaded', function(){
     document
       .querySelector('.signup-form')
       .addEventListener('submit', signupFormHandler);
-});
+

@@ -1,7 +1,11 @@
 <div class="dash-container">
     <h1 class="tech-logo">Dashboard</h1>
 
-    <div class="currentPostList-container"></div>
+    <div class="currentPostList-container">
+        {{#each posts}}
+            <h1>{{title}}</h1>
+        {{/each}}
+    </div>
 
     <div class="createPost-container"></div>
 

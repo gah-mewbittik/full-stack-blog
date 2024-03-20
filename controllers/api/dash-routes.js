@@ -9,8 +9,10 @@ const { User, Post, Comment } = require('../../models');
 router.post('/createPost', async (req, res) => {
   try {
     const dbUserData = await Post.create({
-      name: req.body.name,
+      title: req.body.title,
       description: req.body.description,
+      post_date: req.body.post_date,
+      featured: false,
     
     });
 

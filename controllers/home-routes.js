@@ -12,10 +12,18 @@ router.get('/', (req, res) => {
 //Get Dashboard
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
+    const postData = await Post.findAll({
+      where:{
+        user_id: req.session.user_id
+      }
+    });
+    const posts = postData.map((post) => post.get({plain: true}))
+    console.log(posts);
     console.log(' user is: ', req.session.user_id);
     res.render('dashboard', {
       loggedIn: req.session.loggedIn,
-      userId: req.session.user_id
+      userId: req.session.user_id,
+      posts
     });
 
   } catch (err) {
