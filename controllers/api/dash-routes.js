@@ -5,5 +5,24 @@ const { User, Post, Comment } = require('../../models');
 //TODO: fix the below get
 // Prevent non logged in users from viewing the Dashboard
 
+// CREATE Post
+router.post('/createPost', async (req, res) => {
+  try {
+    const dbUserData = await Post.create({
+      name: req.body.name,
+      description: req.body.description,
+    
+    });
+
+    req.session.save(() => {
+      req.session.loggedIn = true;
+
+      res.status(200).json(dbUserData);
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
   module.exports = router;

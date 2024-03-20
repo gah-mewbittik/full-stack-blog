@@ -5,10 +5,6 @@ document.addEventListener('DOMContentLoaded', function(){
       const name = document.querySelector('#name-signup').value.trim();
       const email = document.querySelector('#email-signup').value.trim();
       const password = document.querySelector('#password-signup').value.trim();
-
-      console.log('Name:', name);
-      console.log('Email:', email);
-      console.log('Password:', password);
     
       let container = document.querySelector('#alert-container');
 
@@ -18,8 +14,6 @@ document.addEventListener('DOMContentLoaded', function(){
           body: JSON.stringify({ name, email, password }),
           headers: { 'Content-Type': 'application/json' },
         });
-        
-        console.log('Response:', response);
 
         if (response.ok) {
           document.location.replace('/dashboard');
@@ -31,17 +25,13 @@ document.addEventListener('DOMContentLoaded', function(){
                   
               </button>
           </div>`;
-          // $(container).on('closed.bs.alert', function () {
-          //     console.log('Alert is closed');
-          // })
+         
           const closeBtn = container.querySelector('.btn-close');
 
           closeBtn.addEventListener('click', function(){
-            console.log('Close button clicked');
               const alert = this.closest('.alert');
               if(alert){
                   alert.style.display = 'none';
-                  console.log('Alert is closed');
               }
           });
 
