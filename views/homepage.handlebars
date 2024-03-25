@@ -1,16 +1,15 @@
 <div class="home-container">
     <h1 class="tech-logo">The Tech Blog</h1>
-    {{#if featured}}
+    
     <!-- Needs to autoGenerate --> 
   <div class="dash-sub-container">
-     <div class="title-Date">
-        <h3 class="postTitle">Post Title</h3>
-        <h4 class="postAuthor">Post By Dude</h4>
-        <h4 class="postDate"> 12/12/2023</h4>
+    {{#each postData}}
+            <h1>{{title}}</h1>
+            <p>{{description}}</p>
+        {{/each}}
       </div>
       <p>Hello there this is supposed to be a description of a post, so it can have...</p>
    </div>
-    {{else}} <p>NO one has Posted!</p>
-    {{/if}}
+  
     
 </div>

@@ -27,7 +27,7 @@ Post.init(
     user_id: {            // TODO: Review this ... import and remove ''
       type: DataTypes.INTEGER,
       references: {
-        model: User,
+        model: 'user',
         key: 'id',
       },
     },

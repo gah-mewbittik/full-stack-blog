@@ -3,10 +3,27 @@ const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Get homepage
-router.get('/', (req, res) => {
-  res.render('homepage', {
-    loggedIn: req.session.loggedIn,
-    userId: req.session.user_id});
+router.get('/', async(req, res) => {
+try{
+    //GET All posts TODO: fix this
+    const postData = await Post.findAll(
+      {featured: req.session.featured,
+        title: req.body.title,
+        description: req.body.description,
+        post_date: req.body.post_date,
+       
+        user_id: req.session.user_id,
+      }
+    );
+  
+    res.render('homepage', {
+      loggedIn: req.session.loggedIn,
+      userId: req.session.user_id});
+}catch(err){
+  console.log(err);
+  res.status(500).json(err);
+}
+
 });
 
 //Get Dashboard
