@@ -52,18 +52,6 @@ const createPostFormHandler = async (event) => {
         form.addEventListener('submit', createPostFormHandler);
     };
     
-    //TODO: how do I go about doing this to display in dashboard and home page
-    const generatePostList = () =>{
-        const dashContainer = document.querySelector('.currentPostList-container');
-
-        dashContainer.innerHTML = `
-        <div class='currentPosts-container'>
-            <button class='btn btn-primary' id='listedPostButtons' type='submit'>${this.title} ${this.id}</button>
-        </div>`;
-
-        const postButton = document.querySelector('#listedPostButtons');
-        postButton.addEventListener('submit', showCreatePostForm);
-    }
     
     // Attach event listener to the "Create Post" button to show the form
     document.querySelector('.createPost').addEventListener('click', showCreatePostForm);
