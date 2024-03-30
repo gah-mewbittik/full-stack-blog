@@ -5,20 +5,26 @@ const withAuth = require('../utils/auth');
 // Get homepage
 router.get('/', async(req, res) => {
 try{
-    //GET All posts TODO: fix this
-    const postData = await Post.findAll(
-      {featured: req.session.featured,
-        title: req.body.title,
-        description: req.body.description,
-        post_date: req.body.post_date,
-       
-        user_id: req.session.user_id,
-      }
-    );
   
+  let postData;
+
+  if(req.session.loggedIn){
+    postData = await Post.findAll({});
+  }else{
+    //GET All posts TODO: fix this
+    postData = await Post.findAll(
+      {where:{
+        featured: true,
+      }}
+    );
+  }
+    const posts = postData.map((post) => post.get({plain: true}));
+    console.log(posts)
     res.render('homepage', {
       loggedIn: req.session.loggedIn,
-      userId: req.session.user_id});
+      userId: req.session.user_id,
+      posts,
+    });
 }catch(err){
   console.log(err);
   res.status(500).json(err);
@@ -32,8 +38,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const postData = await Post.findAll({
       where:{
         user_id: req.session.user_id
-      }
-    });
+      },
+      
+    }, {include: User});
     const posts = postData.map((post) => post.get({plain: true}))
     console.log(posts);
     console.log(' user is: ', req.session.user_id);
@@ -59,6 +66,24 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+router.get("/post/:id", async (req, res)=>{
+  try{
+
+    const postInfo = await Post.findByPk(req.params.id);
+    const post = postInfo.get({plain:true})
+
+
+    res.render("editPost",{
+      loggedIn: req.session.logged_in,
+      post
+    })
+
+  }catch(err){
+    console.log(err)
+    res.status(500).json(err)
+  }
+})
 // // Prevent non logged in users from viewing the Dashboard
 // router.get('/dashboard', withAuth, async (req, res) => {
 //   try {

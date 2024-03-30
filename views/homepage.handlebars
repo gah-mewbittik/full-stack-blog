@@ -3,12 +3,11 @@
     
     <!-- Needs to autoGenerate --> 
   <div class="dash-sub-container">
-    {{#each postData}}
-            <h1>{{title}}</h1>
-            <p>{{description}}</p>
+    {{#each posts}}
+            <button class="btn btn-primary userPostList" type="submit"data-post-id="{{id}}">{{title}} - {{description}}</button>
         {{/each}}
       </div>
-      <p>Hello there this is supposed to be a description of a post, so it can have...</p>
+      
    </div>
   
     

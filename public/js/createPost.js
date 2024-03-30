@@ -3,7 +3,7 @@ const createPostFormHandler = async (event) => {
 
         const title = document.querySelector('#postTitle').value.trim();
         const description = document.querySelector('#postDescription').value.trim();
-        const postDate = new Date();
+        const postDate = new Date(year, month, day);
 
         if (title.length < 3 || description.length < 5) {
             alert('Please enter more than 3 characters for the title and more than 6 characters for the description.');

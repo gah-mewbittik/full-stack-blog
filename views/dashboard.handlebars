@@ -3,13 +3,18 @@
 
     <div class="currentPostList-container">
         {{#each posts}}
-            <button class="btn btn-primary userPostList" type="submit">{{title}}</button>
+        <a href="/post/{{id}}">
+            <button class="btn btn-primary userPostList" type="submit"data-post-id="{{id}}">{{title}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+                  {{user.name}} &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;{{post_date}}</button>
+        </a>
         {{/each}}
     </div>
+    <div class="post-content-container"></div>
 
     <div class="createPost-container"></div>
 
-    <button class="createPost btn btn-primary" type="submit">Create Post</button>
+    <button class="createPost btn btn-primary " type="submit">Create Post</button>
 </div>
 
 <script src="/js/createPost.js"></script>
+<script src="/js/editPost.js"></script>

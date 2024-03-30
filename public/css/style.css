@@ -147,6 +147,18 @@ form {
     /** width: fit-content; **/
   }
 
+  #form-updatePost{
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    margin: 30px auto;
+    
+    /** width: fit-content; **/
+  }
+  #updatePostButton{
+    margin-right: 20px;
+  }
+
   #postTitle{
     margin-left:20px;
     border-radius: 4px;
@@ -161,10 +173,7 @@ form {
 
 
 .dash-sub-container{
-  width: 70%;
-  border-color: rgb(56, 5, 103);
-  border-width: 5px;
-  border-style: solid;
+  
   
 }
 .title-Date{
@@ -188,4 +197,9 @@ form {
   color:aquamarine;
   margin-right: 10px;
   margin-top: 2px;
+}
+
+.userPostList{
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
