@@ -39,8 +39,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
       where:{
         user_id: req.session.user_id
       },
-      
-    }, {include: User});
+      include:User
+    });
     const posts = postData.map((post) => post.get({plain: true}))
     console.log(posts);
     console.log(' user is: ', req.session.user_id);
