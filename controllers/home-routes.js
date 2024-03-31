@@ -9,13 +9,17 @@ try{
   let postData;
 
   if(req.session.loggedIn){
-    postData = await Post.findAll({});
+    postData = await Post.findAll({
+      include:User
+    });
   }else{
     //GET All posts TODO: fix this
     postData = await Post.findAll(
       {where:{
         featured: true,
-      }}
+      },
+      include:User
+    }
     );
   }
     const posts = postData.map((post) => post.get({plain: true}));

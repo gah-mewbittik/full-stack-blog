@@ -203,3 +203,10 @@ form {
   margin-right: 10px;
   margin-bottom: 10px;
 }
+
+.homePagePostDesc{
+  background-color: white;
+  color: #2d3e50;
+  padding: 5%;
+  border-radius: 6px;
+}
