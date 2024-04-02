@@ -13,7 +13,7 @@ router.post('/createComment', withAuth, async (req, res) => {
         user_id: req.session.user_id,
         post_id: postId,
         comment_text: req.body.comment_text,
-      
+        
       });
   
       // req.session.save(() => {

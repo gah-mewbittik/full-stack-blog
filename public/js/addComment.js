@@ -5,13 +5,16 @@
         console.log(document.querySelector('.submitComment').dataset.postId);
        
         const postId = document.querySelector('.submitComment').dataset.postId;
-        const comment_text = document.querySelector("#postDescription").value.trim()
+        const comment_text = document.querySelector("#postDescription").value.trim();
       
-        // console.log(document.querySelector('#postDescription'));
+        // remove element declaration
+        const removeCommentContainer = document.querySelector('.addComment-container');
+        //add saved container
+        const container = document.querySelector('.savedComment-container');
 
+        // console.log(document.querySelector('#postDescription'));
         // const description = document.querySelector('#postDescription').value.trim();
 
-      
             try {
                 const response = await fetch('/api/comment/createComment', {
                     method: 'POST',
@@ -23,7 +26,16 @@
 
                 if (response.ok) {
                     // Successful submission, redirect or display success message
-                    document.location.replace('/dashboard');
+                    //remove add comment form
+                    
+
+                    //add save comment container TODO: how to get the Post Name
+                    container.innerHTML = `
+                <h1 class='newPostHeader'>${postId}</h1> 
+                <p>${comment_text}</p>
+                `;
+                removeCommentContainer.remove();
+                   // document.location.replace('/dashboard');
                 } else {
                     // Error handling if server responds with an error
                     console.error('Server responded with error:', response.statusText);
