@@ -63,7 +63,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 //get login
 router.get('/login', (req, res) => {
   // If a session exists, redirect the request to the homepage
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
@@ -79,7 +79,7 @@ router.get("/post/:id", async (req, res)=>{
 
 
     res.render("editPost",{
-      loggedIn: req.session.logged_in,
+      loggedIn: req.session.loggedIn,
       post
     })
 
@@ -88,39 +88,34 @@ router.get("/post/:id", async (req, res)=>{
     res.status(500).json(err)
   }
 })
-// // Prevent non logged in users from viewing the Dashboard
-// router.get('/dashboard', withAuth, async (req, res) => {
-//   try {
-//     const userData = await User.findAll({
-//       attributes: { exclude: ['password'] },
-//       order: [['name', 'ASC']],
-//     });
 
-//     const users = userData.map((project) => project.get({ plain: true }));
+//Get COMMENT TODO: Fix /:id
+router.get('/comment/:id', async (req, res) => {
+  // If a session exists, redirect the request to the comment page
+  console.log(req.session.loggedIn)
+  if (req.session.loggedIn) {
+    try{
 
-//     res.render('homepage', {
-//       users,
-//       // Pass the logged in flag to the template
-//       logged_in: req.session.logged_in,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+      const postInfo = await Post.findByPk(req.params.id);
+      const post = postInfo.get({plain:true})
+  
+  
+      res.render("comment",{
+        loggedIn: req.session.loggedIn,
+        post
+      })
+  
+    }catch(err){
+      console.log(err)
+      res.status(500).json(err)
+    }
 
+  }else{
+    res.redirect('/login');
+  }
 
-// Get Login
-// router.get('/login', (req, res) => {
-//   // If a session exists, redirect the request to the homepage
-//   if (req.session.logged_in) {
-//     res.redirect('/');
-//     return;
-//   }
-
-//   res.render('login');
-// });
-
-// get singUp
+ 
+});
 
 
 

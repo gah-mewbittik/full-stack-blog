@@ -1,9 +1,13 @@
         <div class='newComment-container'>
+            <h1>{{post.title}}</h1>
+            <p>{{post.description}}</p>
+            <h2>{{post.id}}</h2>
+
             <h1 class='newCommentHeader' >New Comment</h1>
             <form id='form-newComment'>
                 <!-- <input type='text' id='postTitle' placeholder='Title (required)' value='{{post.title}}'/> -->
-                <textarea id='postDescription' placeholder='Description (required)'>{{post.description}}</textarea>
-                <button class='createComment btn btn-primary' id='newCommentButton' type='submit'>Submit Comment</button>
+                <textarea id='postDescription' placeholder='Description (required)'></textarea>
+                <button class='submitComment btn btn-primary' id='newCommentButton' type='submit' data-post-id="{{post.id}}">Submit Comment</button>
                 
             </form>
         </div>

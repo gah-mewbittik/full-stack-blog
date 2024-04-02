@@ -5,12 +5,14 @@ const withAuth = require('../../utils/auth');
 // CREATE comment
 router.post('/createComment', withAuth, async (req, res) => {
     try {
-        const { user_id, post_id, comment_test } = req.body;
+        const { postId, comment_text } = req.body;
+
+        console.log("we are in the create comment route ------ > ", req.body.comment_text )
 
       const dbCommentData = await Comment.create({
-        user_id,
-        post_id,
-        comment_text: req.body.description,
+        user_id: req.session.user_id,
+        post_id: postId,
+        comment_text: req.body.comment_text,
       
       });
   
