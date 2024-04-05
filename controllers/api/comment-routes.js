@@ -15,7 +15,8 @@ router.post('/createComment', withAuth, async (req, res) => {
         comment_text: req.body.comment_text,
         
       });
-  
+      
+      
       // req.session.save(() => {
       //   req.session.loggedIn = true;
   

@@ -169,13 +169,9 @@ form {
     border-radius: 4px;
     margin-right:20px;
     box-shadow: 3px 3px grey;
+    
   }
 
-
-.dash-sub-container{
-  
-  
-}
 .title-Date{
   display: flex;
   justify-content: space-between;
@@ -211,4 +207,39 @@ form {
   color: #2d3e50;
   padding: 5%;
   border-radius: 6px;
+}
+
+#form-newComment{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  width: fit-content;
+
+}
+.savedComment{
+  border-style: solid;
+    border-color: aquamarine;
+    border-radius: 6px;
+}
+.newCommentHeader{
+  margin-left: 0px;
+  color: rgb(56, 5, 103);
+  background-color: aquamarine;
+  width: 100%;
+}
+.thisComment-container{
+  margin-left: 0px;
+  color: rgb(56, 5, 103);
+  background-color: aquamarine;
+  width: 100%;
+  margin-bottom: 50px;
+}
+.thisComment{
+  background-color: white;
+  border-style: solid;
+  border-color: aquamarine;
+  border-radius: 6px;
+  margin: 10px;
+  padding: 5px;
 }

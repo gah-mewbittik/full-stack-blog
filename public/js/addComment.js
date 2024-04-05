@@ -27,24 +27,25 @@
                 if (response.ok) {
                     // Successful submission, redirect or display success message
                     //remove add comment form
-                    
+                
 
                     //add save comment container TODO: how to get the Post Name
                     container.innerHTML = `
-                <h1 class='newPostHeader'>${postId}</h1> 
-                <p>${comment_text}</p>
+               <div class='savedComment'><h2 class='newCommentHeader'>Comment Saved</h2> <p>${comment_text}</p>
+                <p> - ${postId}</p> 
+                </div>
                 `;
                 removeCommentContainer.remove();
                    // document.location.replace('/dashboard');
                 } else {
                     // Error handling if server responds with an error
                     console.error('Server responded with error:', response.statusText);
-                    alert('An error occurred while creating the post. Please try again later.');
+                    alert('An error occurred while creating the comment. Please try again later.');
                 }
             } catch (error) {
                 // Catch any network errors
                 console.error('Network error occurred:', error);
-                alert('A network error occurred while creating the post. Please try again later.');
+                alert('A network error occurred while creating the comment. Please try again later.');
             }
         
     };
