@@ -30,13 +30,13 @@
                 
 
                     //add save comment container TODO: how to get the Post Name
-                    container.innerHTML = `
-               <div class='savedComment'><h2 class='newCommentHeader'>Comment Saved</h2> <p>${comment_text}</p>
-                <p> - ${postId}</p> 
-                </div>
-                `;
-                removeCommentContainer.remove();
-                   // document.location.replace('/dashboard');
+            //         container.innerHTML = `
+            //    <div class='savedComment'><h2 class='newCommentHeader'>Comment Saved</h2> <p>${comment_text}</p>
+            //     <p> - ${postId}</p> 
+            //     </div>
+            //     `;
+            //     removeCommentContainer.remove();
+                   document.location.replace(`/comment/${postId}`);
                 } else {
                     // Error handling if server responds with an error
                     console.error('Server responded with error:', response.statusText);

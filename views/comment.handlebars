@@ -2,7 +2,16 @@
             <div class='thisComment-container'>
                 <h1>{{post.title}}</h1>
                 <p class="thisComment">{{post.description}}</p>
-                <h2>{{post.id}}</h2>
+                <h2>{{post.user.name}}</h2>
+            </div>
+            <div class="allcomments">
+                {{#each post.comments}}
+                <div>
+                    <p>{{comment_text}}</p>
+                    <p>created by: {{user.name}}</p>
+                </div>
+                {{/each}}
+
             </div>
             <div class="addComment-container">
                 <h1 class='newCommentHeader' >New Comment</h1>

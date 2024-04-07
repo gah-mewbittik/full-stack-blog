@@ -96,9 +96,23 @@ router.get('/comment/:id', async (req, res) => {
   if (req.session.loggedIn) {
     try{
 
-      const postInfo = await Post.findByPk(req.params.id);
+      const postInfo = await Post.findByPk(req.params.id,{
+        include:[
+          User,
+          {
+            model:Comment,
+            include:User,
+            
+          }
+        
+        ]
+        
+      });
       const post = postInfo.get({plain:true})
-  
+      // console.log(post)
+      post.comments.reverse()
+      console.log(post.comments)
+   
   
       res.render("comment",{
         loggedIn: req.session.loggedIn,
