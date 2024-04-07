@@ -23,7 +23,7 @@ N/A
 
 ## Usage
 
-To view the application in action, simply click the following link: ADD LINK
+To view the application in action, simply click the following link: https://pacific-meadow-34307-80829f509aa3.herokuapp.com/
 The link will redirect you to Heroku where the user can see the application in action. The full-stack-blog application functionality allows the user to view, create, and delete posts. The users can also comment other members' posts. 
 
 ## Credits
