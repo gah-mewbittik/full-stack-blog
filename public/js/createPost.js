@@ -3,6 +3,8 @@ const createPostFormHandler = async (event) => {
 
         const title = document.querySelector('#postTitle').value.trim();
         const description = document.querySelector('#postDescription').value.trim();
+
+        const year= new Date().getFullYear();
         const postDate = new Date(year, month, day);
 
         if (title.length < 3 || description.length < 5) {
@@ -38,7 +40,7 @@ const createPostFormHandler = async (event) => {
         const container = document.querySelector('.createPost-container');
     
         container.innerHTML = `
-            <div class='newPost-container'>
+            <div class='newPost-container '>
                 <h1 class='newPostHeader' >Create Post</h1>
                 <form id='form-createPost'>
                     <input type='text' id='postTitle' placeholder='Title (required)' />

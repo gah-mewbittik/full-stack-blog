@@ -136,10 +136,11 @@ form {
     color: rgb(56, 5, 103);
     background-color: aquamarine;
     width: 100%;
+    padding: 10px;
   }
 
   #form-createPost{
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: top;
     margin: 30px auto;
@@ -163,13 +164,21 @@ form {
     margin-left:20px;
     border-radius: 4px;
     margin-right: 20px;
+    margin-bottom: 20px;
     box-shadow: 3px 3px grey;
+    width: 95%;
   }
   #postDescription{
     border-radius: 4px;
-    margin-right:20px;
+    margin-left: 20px;
+    margin-right:25px;
     box-shadow: 3px 3px grey;
-    
+    width: 95%;
+    margin-bottom: 10px
+  }
+
+  #createPostButton{
+    margin-left: 45%
   }
 
 .title-Date{
@@ -209,14 +218,14 @@ form {
   border-radius: 6px;
 }
 
-#form-newComment{
+ /*#form-newComment{
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 30px auto;
   width: fit-content;
 
-}
+} */
 .savedComment{
   border-style: solid;
     border-color: aquamarine;
@@ -227,6 +236,7 @@ form {
   color: rgb(56, 5, 103);
   background-color: aquamarine;
   width: 100%;
+  padding:10px;
 }
 .thisComment-container{
   margin-left: 0px;
@@ -258,4 +268,23 @@ form {
 .commentUser{
   margin-left: 30px;
   color: rgb(56, 5, 103);
+}
+
+.addComment-container{
+  margin-bottom:150px;
+  border-style: solid;
+  border-color: aquamarine;
+  border-radius: 6px;
+}
+
+#addComment{
+  width: 95%;
+  margin-left: 20px;
+  margin-bottom: 25px;
+}
+
+.submitComment{
+  margin-left: 45%;
+  padding: 10px;
+  margin-bottom: 20px;
 }
